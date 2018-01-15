@@ -1,2 +1,2 @@
-const token = "put your token here";
+const token = ""
 module.exports = token

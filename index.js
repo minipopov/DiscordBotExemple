@@ -41,7 +41,6 @@ const serverRest = http.createServer()
 serverRest.on('request', (request,response) => {
 	
 	if (request.url != '/favicon.ico') {
-		console.log("waiting")
 		let getArgs = url.parse(request.url, true).query
 		let action = getArgs.action;
 		if (Array.isArray(action)){
