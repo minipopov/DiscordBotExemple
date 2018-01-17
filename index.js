@@ -5,7 +5,6 @@ let ready = false;
 const TOKEN = require('./private.js');
 const Discord = require("discord.js");
 const client = new Discord.Client();
-
 client.on('ready', () => {
 	ready = true;
 	chanGeneral = client.channels.find("id", "317763543418011655")
@@ -14,7 +13,11 @@ client.on('error', (error) => {
 	console.log(error)
 })
 
-client.login(TOKEN);
+client.login(TOKEN)
+	.catch((error) => {
+		console.dir(error)
+		process.exit()
+	});
 
 /*
 *	functionList is an array of list function
@@ -26,7 +29,7 @@ const BaseFnc = require('./BaseFnc')
 const globalMessage = new BaseFnc("sendGlobal", 10)
 globalMessage.setFloodProtection("perUser")
 globalMessage.setCallback((params, steamID) => {
-	chanGeneral.send(params.text)
+	// chanGeneral.send(params.text)
 });
 
 //Push new function
