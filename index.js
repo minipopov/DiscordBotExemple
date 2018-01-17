@@ -29,7 +29,7 @@ const BaseFnc = require('./BaseFnc')
 const globalMessage = new BaseFnc("sendGlobal", 10)
 globalMessage.setFloodProtection("perUser")
 globalMessage.setCallback((params, steamID) => {
-	// chanGeneral.send(params.text)
+	chanGeneral.send(params.text)
 });
 
 //Push new function

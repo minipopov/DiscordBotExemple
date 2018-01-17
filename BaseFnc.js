@@ -28,6 +28,9 @@ BaseFnc.prototype.setFloodProtection = function(AntiFloodName) {
 	    case "perUser":
 	    	this.antiflood = new floodProtectionPerUser(this.time)
 	        break;
+	    case "perCall":
+	    	this.antiflood = new floodProtectionPerUser(this.time)
+	        break;
 	    default:
 	        this.antiflood = new floodProtection(this.time);
 	}
